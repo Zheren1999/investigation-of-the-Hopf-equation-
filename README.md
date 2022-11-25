@@ -2,89 +2,38 @@
 
 ![image](https://user-images.githubusercontent.com/89813720/202878060-6b641f13-da41-4f2e-be2c-e8e213fd76a3.png)
 
-Hokusai, The Great Wave off Kanagawa, 1823
+(Hokusai, The Great Wave off Kanagawa, 1823)
 
-Let's consider a two-dimensional medium consisting of particles moving by inertia, without intersection and in the absence of external forces. Denote $u(t,x)$ is the speed of a particle located at a point in time $t$ and space point $x$. If $x=q(t)$ is the trajectory of motion of some fixed particle, then its speed $q'(t)=u(t, q(t))$ and acceleration $q''(t)$ is equal to zero. 
+Let's consider a two-dimensional medium consisting of particles moving by inertia, without intersection and in the absence of external forces. Denote $u(t,x)$ is the speed of a particle located at a point in time $t$ and space point $x$. If $x=q(t)$ is the trajectory of motion of some fixed particle, then its speed $q'(t)=u(t, q(t))$, and acceleration $q''(t)$ is equal to zero. 
 
-![image](https://user-images.githubusercontent.com/89813720/202877434-1efe118e-f409-49bd-835d-5fe2c09405f6.png)
+![image](https://user-images.githubusercontent.com/89813720/204052501-0a79a09c-62c1-4a73-95eb-9d468e3ce4d4.png)
 
-the resulting equation describing the evolution of the velocity field of non - interacting particles is called Hopf equation:
+The resulting equation describing the evolution of the velocity field of non - interacting particles is called Hopf equation
 
-![image](https://user-images.githubusercontent.com/89813720/202877442-5f9aced4-9472-4e87-a304-7a07031687b3.png)
+![image](https://user-images.githubusercontent.com/89813720/204052561-9ce662b1-b616-4df5-b1d2-a1cc14cfbfb9.png)
 
-# The analytical solution for Hopf equation
+**The analytical solution of Hopf equation**
 
-# Rollover effect
+The analytical solution of Hopf equation can be determined by method of characteristics: 
 
-# Model description
+![image](https://user-images.githubusercontent.com/89813720/204052673-135a4257-955a-4771-989d-639740cbd659.png)
 
+where, $g$ is the continuous function.
 
+It is necessary to invert the map $x = x_{0} + u_{0}(x_{0})t$ concerning $x_{0}$, and then substitute it into the expression for $u$ to find the explicit dependence $u = u(x,t)$ (the parametric solution), which is most often found in literature: 
 
-# Newton's method
-Newton's method (Newton-Raphson method) is an iterative numerical method for finding the root of a given function. The method was first proposed by the English physicist, mathematician, and astronomer Isaac Newton. The search for a solution is carried out by constructing successive approximations based on simple iteration principles. 
+![image](https://user-images.githubusercontent.com/89813720/204052722-6826c960-6415-49f4-a74b-98bcee80060b.png)
 
-To numerically solve the equation: $f (x) = 0$ by simple iteration, it must be reduced to the equivalent equation: $x = φ(x)$ where phi is the contraction display. For the best convergence of the method at the next approximation point $x^*$, the condition: $φ'(x∗) = 0$
+The solution of the Hopf equation can be easily analyzed. According to the solution, each point of the velocity profile moves with its own (constant) velocity.
+In this case, the velocity profile will be deformed since faster particles will overtake the slower ones. As a result, the shape is steeper, and at time $t = t^{*}$, the gradient of $x$ becomes endless. This phenomenon is called overturning or gradient catastrophe \cite{kuznetsov2022slipping}. To find the overturning time $t^{*}$, it is necessary to calculate
+derivative $\frac{\partial{u}}{\partial{x}}$:
 
-The solution to this equation is sought in the form: $φ(x) = x + α(x)f(x)$, then we can get: $φ'(x^*) = 1 + α'(x^*)f(x^*) = 0 $
-Assuming that the point of approximation is ”close enough” to the root  ̄xand that the given function is continuous:
-$f (x^*)= f ( ̄x) = 0$, final formula for $α(x)$ is: $α(x) =-1/f'(x)$
-With this in mind, the function $φ(x)$ is defined:
-$φ(x) = x − f (x)/f'(x)$
+![image](https://user-images.githubusercontent.com/89813720/204052768-f8020b0b-a9f7-43c2-90d8-025b1260d2ee.png)
 
-The algorithm for Newtons method can be described as follows:
-1. Set the initial approximation $x_0$
-2. Until the stop condition is met, which can be taken as $|x_{n+1}-x_{n}|<\epsilon$ that is, the error is within the required limits, calculate a new approximation: 
+where $J = \frac{\partial{x}}{\partial{x_{0}}} = 1 + u'_{0}(x_{0})t$ is the Jacobian of $x = x_{0} + u_{0}(x_{0})t$. It can be seen from this expression that the derivative becomes infinite for the first time when the Jacobian, $J=0$ and corresponding $t^{*}$ can be expressed as the following formula:
 
-![image](https://user-images.githubusercontent.com/89813720/202877424-0c895daa-905b-4152-9cc1-1bd9d7cefdc1.png)
+![image](https://user-images.githubusercontent.com/89813720/204052798-350cf044-3da5-41ae-8572-f38c71ed99fd.png)
 
-# Lax-Friedrichs scheme
-
-The Lax-Friedrichs scheme is defined in numerical analysis as a method for the numerical solution of hyperbolic partial differential equations based on the finite difference method.
-
-Extensions to Nonlinear Problems
-
-The formula defines the hyperbolic system of one-dimensional conservation laws:
-
-![image](https://user-images.githubusercontent.com/89813720/202877485-74943515-9ade-454c-a4f5-4fe87978c1ed.png)
-
-In general, $f$ is a vector that has components. A generalization of the Lax-Friedrichs scheme to nonlinear systems takes the form:
-
-![image](https://user-images.githubusercontent.com/89813720/202877517-0fb16b5d-e594-4a1f-8406-f4d98342111b.png)
-
-This conservative scheme is of order 1 in space and time. On the other hand, it can be used to construct higher-order schemes for solving systems of hyperbolic partial differential equations, in the same way that Euler's method is used to construct more accurate Runge-Kutta type methods for solving ordinary differential equations.
-
-This scheme can be written in a conservative form:
-
-![image](https://user-images.githubusercontent.com/89813720/202877546-15962490-a2f7-4bca-b2e5-e964da8338b3.png)
-
-The Lax-Friedrichs scheme is explicit and has order 1 in space and time. For this reason, it is not used as often in practice. This scheme is stable under the following condition:
-
-![image](https://user-images.githubusercontent.com/89813720/202877577-2e8442e6-8a88-45f8-aa76-c312485d4c19.png)
-
-
-# McCormack scheme
-Difference schemes "predictor-corrector"
-
-Predictor-corrector schemes are a family of methods related to algorithms designed to integrate ordinary differential equations. All such techniques involve two steps:
-1. At the first step (predictor), some function is calculated from values calculated in the previous step to get the approximated value of the desired function in the following point.
-2. At the second step (corrector), the received approximation using the predicted value function and another operator to interpolate the value desired position at the same point.
-The following system can represent this scheme:
-
-where $u^{n+1/2}$ is the value obtained at the "predictor" step, and $u^{n+1}$ is the refined desired value.
-It can be seen that the first step is implemented using explicit methods, and the second step is based on the application of formulas of implicit methods; on the right side, instead of the unknown value $u^{n+1}$, the result is substituted predictions $u^{n+1/2}$.
-
-Methods using the predictor-corrector scheme:
-1. Milne method – for ODE;
-
-2. Heun's method (predictor - Euler's method, corrector - Method trapezium). 
-
-When using the predictor-corrector scheme for solving the ODE note the high accuracy of the calculation and the absence of properties
-self-starting (that is, to start calculations according to the scheme predictor-corrector must first be used another self-starting method).
-
-3. Adams-Bashfort method -  for solutions non-rigid boundary value problems (the Adams-Bashfort-Multon corrector is used);
-
-4. Hamming formulas.
-
-5. McCormack method.
-
+This minimum corresponds to the point $x^{*}$ (the breaking point). From this, it is clear that the overturning occurs for the initial profiles with a negative derivative $u_{x} < 0$. For $t > t^{*}$, the equation $J = 0$ has two roots, respectively. The derivative goes to infinity at two points.  The area of ambiguity is between these points. From the mapping point of view, this means that the mapping $x = x(x_{0}, t)$ is single-valued — the equation $x = x(x_{0}, t)$ has only one (real) root $x_{0} = x_{0}(x, t)$ for all $x$. For $t > t^{*}$, the equation $x = x(x_{0} , t)$ has three roots $x_{0}$ for any $x$ from the ambiguity domain. A change in the number of roots of a mapping is called a bifurcation. In this case, one root converts to three roots at the bifurcation point $(x^{*}, t^{*}, u^{*})$. The bifurcation point is also called the cusp point.
+In physics, overturning is the cause of the formation of shock waves. When approaching the overturning point, the equations of ideal hydrodynamics lose their applicability in real gas.
 
