@@ -25,21 +25,21 @@ It is necessary to invert the map $x = x_{0} + u_{0}(x_{0})t$ concerning $x_{0}$
 ![image](https://user-images.githubusercontent.com/89813720/204052722-6826c960-6415-49f4-a74b-98bcee80060b.png)
 
 The solution of the Hopf equation can be easily analyzed. According to the solution, each point of the velocity profile moves with its own (constant) velocity.
-In this case, the velocity profile will be deformed since faster particles will overtake the slower ones. As a result, the shape is steeper, and at time $t = t^{*}$, the gradient of $x$ becomes endless. This phenomenon is called overturning or gradient catastrophe \cite{kuznetsov2022slipping}. To find the overturning time $t^{*}$, it is necessary to calculate
+In this case, the velocity profile will be deformed since faster particles will overtake the slower ones. As a result, the shape is steeper, and at time $t = t^* $, the gradient of $x$ becomes endless. This phenomenon is called overturning or gradient catastrophe [2]. To find the overturning time $t^* $, it is necessary to calculate
 derivative $\frac{\partial{u}}{\partial{x}}$:
 
 ![image](https://user-images.githubusercontent.com/89813720/204052768-f8020b0b-a9f7-43c2-90d8-025b1260d2ee.png)
 
-where $J = \frac{\partial{x}}{\partial{x_{0}}} = 1 + u'_{0}(x_{0})t$ is the Jacobian of $x = x_{0} + u_{0}(x_{0})t$. It can be seen from this expression that the derivative becomes infinite for the first time when the Jacobian, $J=0$ and corresponding $t^{*}$ can be expressed as the following formula:
+where $ J = \frac{\partial{x}}{\partial{x_{0}}} = 1 + u'_{0}(x_{0})t $ is the Jacobian of $x = x_{0} + u_{0}(x_{0})t$. It can be seen from this expression that the derivative becomes infinite for the first time when the Jacobian, $J=0$ and corresponding $t^{*}$ can be expressed as the following formula:
 
 ![image](https://user-images.githubusercontent.com/89813720/204052798-350cf044-3da5-41ae-8572-f38c71ed99fd.png)
 
-This minimum corresponds to the point $x^{*}$ (the breaking point). From this, it is clear that the overturning occurs for the initial profiles with a negative derivative $u_{x} < 0$. For $t > t^{*}$, the equation $J = 0$ has two roots, respectively. The derivative goes to infinity at two points.  The area of ambiguity is between these points. From the mapping point of view, this means that the mapping $x = x(x_{0}, t)$ is single-valued — the equation $x = x(x_{0}, t)$ has only one (real) root $x_{0} = x_{0}(x, t)$ for all $x$. For $t > t^{*}$, the equation $x = x(x_{0} , t)$ has three roots $x_{0}$ for any $x$ from the ambiguity domain. A change in the number of roots of a mapping is called a bifurcation. In this case, one root converts to three roots at the bifurcation point $(x^{*}, t^{*}, u^{*})$. The bifurcation point is also called the cusp point.
+This minimum corresponds to the point $x^* $ (the breaking point). From this, it is clear that the overturning occurs for the initial profiles with a negative derivative $u_{x} < 0$. For $t > t^{*}$, the equation $J = 0$ has two roots, respectively. The derivative goes to infinity at two points.  The area of ambiguity is between these points. From the mapping point of view, this means that the mapping $x = x(x_{0}, t)$ is single-valued — the equation $x = x(x_{0}, t)$ has only one (real) root $x_{0} = x_{0}(x, t)$ for all $x$. For $t > t^{*}$, the equation $x = x(x_{0} , t)$ has three roots $x_{0}$ for any $x$ from the ambiguity domain. A change in the number of roots of a mapping is called a bifurcation. In this case, one root converts to three roots at the bifurcation point $ (x^{*}, t^{*}, u^{*}) $. The bifurcation point is also called the cusp point.
 In physics, overturning is the cause of the formation of shock waves. When approaching the overturning point, the equations of ideal hydrodynamics lose their applicability in real gas.
 
 **Model description**
 
-We study the Hopf equation with following limits: $0<t<1$ , $-5<x<10$, and the initial condition:
+We study the Hopf equation with following limits: $ 0<t<1 $ , $-5<x<10$, and the initial condition:
 
 ![image](https://user-images.githubusercontent.com/89813720/204052920-ce54fc1d-f950-45d6-ba28-a31f741cd5ef.png)
 
@@ -195,8 +195,18 @@ where $dt$ and $dx$ are discretization steps in the time and space domain corres
 The scheme requires a boundary condition on the left side ($x = 0$). We use $u^{n}_{0}=0$ because of the exponential damping of the initial function.
 
 We studied the solution of the Hopf equation for different values of time: $t = 0.5, 1, 1.649, 1.8$. 
-The Fig.~\ref{Fig.1} compares analytical and numerical solutions for a given time. In addition, the maximum discrepancy $r$ between the analytical and numerical solutions was calculated for the Lax - Friedrichs scheme. The Fig.~\ref{Fig.2} shows the 3D numerical solution of the Hopf equation for $t = 1$ and $t = 1.65$
+The Fig. 1 compares analytical and numerical solutions for a given time. In addition, the maximum discrepancy $r$ between the analytical and numerical solutions was calculated for the Lax - Friedrichs scheme. 
+
+![image](https://user-images.githubusercontent.com/89813720/204058668-d62f34ea-04c9-42f4-b428-dceafeb27596.png)
+
+![image](https://user-images.githubusercontent.com/89813720/204058707-5eb8f5c6-a553-48b6-8e58-ad53114b25bd.png)
+
+
+The Fig. 2 shows the 3D numerical solution of the Hopf equation for $t = 1$ and $t = 1.65$
 As can be seen, for the time $t=1.65$ overturning effect occurs, the velocity profile becomes steep.
+
+![image](https://user-images.githubusercontent.com/89813720/204058611-c8044476-635d-46c9-9431-b131ae24f722.png)
+
 
 **MacCormack scheme**
 
@@ -213,39 +223,28 @@ The Fig.~\ref{Fig.3} shows the 3D numerical solution of Hopf equation using MacC
 **References**
 
 REFERENCES
-[1] Kuznetsov, E., and Shapiro, D., 2011. “Meth-
-ods of mathematical physics: a course of lectures”.
-Novosibirsk State University.
-[2] Kuznetsov, E., and Mikhailov, E., 2022. “Slip-
-ping flows and their breaking”. Annals of Physics,
-p. 169088.
-[3] Mor ́e, J. J., and Sorensen, D. C., 1982. Newton’s
-method. Tech. rep., Argonne National Lab., IL
-(USA).
-[4] Polyak, B. T., 2007. “Newton’s method and its use
-in optimization”. European Journal of Operational
-Research, 181(3), pp. 1086–1096.
-[5] DuChateau, P., and Zachmann, D. W., 2002. Ap-
-plied partial differential equations. Courier Corpo-
-ration.
-[6] CHU, C., 1978. Numerical methods in fluid dynam-
-ics, in “advances in applied mechanics”(cs. yih, ed.),
-vol. 18.
-[7] Zhang, P.-G., and Wang, J.-P., 2012. “A predictor–
-corrector compact finite difference scheme for burg-
-ers’ equation”. Applied Mathematics and Computa-
-tion, 219(3), pp. 892–898.
+[1] Kuznetsov, E., and Shapiro, D., 2011. “Methods of mathematical physics: a course of lectures”. Novosibirsk State University.
+
+[2] Kuznetsov, E., and Mikhailov, E., 2022. “Slipping flows and their breaking”. Annals of Physics,p. 169088.
+
+[3] Mor ́e, J. J., and Sorensen, D. C., 1982. Newton’s method. Tech. rep., Argonne National Lab., IL (USA).
+
+[4] Polyak, B. T., 2007. “Newton’s method and its use in optimization”. European Journal of Operational Research, 181(3), pp. 1086–1096.
+
+[5] DuChateau, P., and Zachmann, D. W., 2002. Applied partial differential equations. Courier Corporation.
+
+[6] CHU, C., 1978. Numerical methods in fluid dynamics, in “advances in applied mechanics”(cs. yih, ed.), vol. 18.
+
+[7] Zhang, P.-G., and Wang, J.-P., 2012. “A predictor - corrector compact finite difference scheme for burgers’ equation”. Applied Mathematics and Computation, 219(3), pp. 892–898.
+
 [8] Butcher, J. C., 2016. Numerical methods for ordinary differential equations. John Wiley & Sons.
-[9] Press, W., Teukolsky, S., Vetterling, W., and Flan-
-nery, B., 2007. “Section 17.6. multistep, multi-
-value, and predictor-corrector methods”. Numerical
+
+[9] Press, W., Teukolsky, S., Vetterling, W., and Flannery, B., 2007. “Section 17.6. multistep, multivalue, and predictor-corrector methods”. Numerical
 Recipes: The Art of Scientific Computing.
-[10] Anderson, J. D., and Wendt, J., 1995. Computa-
-tional fluid dynamics, Vol. 206. Springer.
-[11] Hixon, R., and Hixon, R., 1997. “On increasing the
-accuracy of maccormack schemes for aeroacoustic
-applications”. In 3rd AIAA/CEAS Aeroacoustics
-Conference, p. 1586.
+
+[10] Anderson, J. D., and Wendt, J., 1995. Computational fluid dynamics, Vol. 206. Springer.
+
+[11] Hixon, R., and Hixon, R., 1997. “On increasing the accuracy of maccormack schemes for aeroacoustic applications”. In 3rd AIAA/CEAS Aeroacoustics Conference, p. 1586.
 
 
 
