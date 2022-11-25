@@ -152,7 +152,100 @@ Methods using the predictor-corrector scheme:\\
 non-rigid boundary value problems (the Adams-Bashforth-Moulton corrector is used).\\
 4. MacCormack method.\\
 
+**MacCormack method**
 
+The MacCormack method is a modified two-step scheme
+Lax - Wendroff, but it is much easier to use \cite{anderson1995computational}.
+Consider the following first-order hyperbolic equation:
+
+![image](https://user-images.githubusercontent.com/89813720/204057548-33203c5e-a58a-4a1d-bf28-fc5f44c8457e.png)
+
+Predictor: At this step, the predicted value of $w$ at the moment time $k+1$: $\bar{w}^{k+1}_{i}$ is evaluated as follows:
+
+![image](https://user-images.githubusercontent.com/89813720/204057584-5daec011-40b7-4bad-9000-478c88b4f55c.png)
+
+Corrector: At this step, the predicted value $\bar{w}^{k+1}_{i}$
+corrected according to the equation:
+
+![image](https://user-images.githubusercontent.com/89813720/204057612-6f769ed5-ded2-4641-9e54-2ed3cac75126.png)
+
+Note that the intermediate value $\bar{w}^{k+1}_{i}$
+doesn't make sense physically.
+The scheme has the second order of accuracy with an approximation error $O(\Delta t^2, \Delta x^2)$, while it is stable at $|a\frac{\Delta t}{\Delta x}|\leq1$. The differential approximation of the scheme has the following form:
+
+![image](https://user-images.githubusercontent.com/89813720/204057636-827b83cd-3cc6-4c92-9f9f-9fbe1d9e03ae.png)
+
+The MacCormack scheme is often used due to a number of its advantages \cite{hixon1997increasing}. In particular, it operates only with quantities in the primary
+grid nodes and can be easily generalized to multidimensional problems. Also, this is the schematic
+second-order accuracy.
+
+# Results and Discussion
+
+**Lax - Friedrichs scheme**
+
+We convert the Hopf equation into the divergent form: 
+
+![image](https://user-images.githubusercontent.com/89813720/204057695-7e82191a-ed76-4206-af51-8805c9ad850a.png)
+
+and using Eq.~(\ref{Eq.21}) we can get the Lax - Friedrichs numerical scheme: 
+
+![image](https://user-images.githubusercontent.com/89813720/204057717-9db76ec7-286c-4341-a502-674acb041432.png)
+
+where $dt$ and $dx$ are discretization steps in the time and space domain correspondingly. The upper index defines the time location, and the lower represents the spatial location of the function. 
+The scheme requires a boundary condition on the left side ($x = 0$). We use $u^{n}_{0}=0$ because of the exponential damping of the initial function.
+
+We studied the solution of the Hopf equation for different values of time: $t = 0.5, 1, 1.649, 1.8$. 
+The Fig.~\ref{Fig.1} compares analytical and numerical solutions for a given time. In addition, the maximum discrepancy $r$ between the analytical and numerical solutions was calculated for the Lax - Friedrichs scheme. The Fig.~\ref{Fig.2} shows the 3D numerical solution of the Hopf equation for $t = 1$ and $t = 1.65$
+As can be seen, for the time $t=1.65$ overturning effect occurs, the velocity profile becomes steep.
+
+**MacCormack scheme**
+
+Similarly, as in the previous numerical scheme, we used the divergent form of the differential equation. We calculate the predictor using the following formula: 
+
+![image](https://user-images.githubusercontent.com/89813720/204057765-c33692a2-8d15-484e-9ee5-924d912f34d6.png)
+
+Later, to determine the corrector, the predicted value of the function we approximated using the following formula:
+
+![image](https://user-images.githubusercontent.com/89813720/204057781-1e8a2f1c-f42d-4c87-9f93-9070aa4a3cc1.png)
+
+The Fig.~\ref{Fig.3} shows the 3D numerical solution of Hopf equation using MacCormack scheme. In the same way as in the Lax - Friedrichs scheme, numerical solutions were constructed for different values of time $t$ (Fig.~\ref{Fig.4}) for MacCormack scheme. We use the number of time discretization points $N_{t} = 100$ and the spatial discretization, $N_{x} =1500 $, for both numerical schemes. Fig.~\ref{Fig.1} and Fig.~\ref{Fig.4} show that the analytical and numerical solutions coincide very well. However, the maximum discrepancy $r$ when using the MacCormack scheme is less than for the Lax - Friedrichs scheme (Fig.~\ref{Fig.5}). It can be explained by the fact that the MacCormack scheme has the second order of accuracy $O(\Delta t^2, \Delta x^2)$ in contrast to the Lax - Friedrichs scheme $O(\Delta t, \Delta x)$. Also, it can be seen that the maximum discrepancy $r$ is increasing with increasing time $t$. Up to the overturning time, $t^{*}$, the difference rises very slightly. After this time, the maximum value of discrepancy increases significantly. It is due to the overturning effect. The solution becomes ambiguous after reaching the overturning time $t^{*}$.
+
+**References**
+
+REFERENCES
+[1] Kuznetsov, E., and Shapiro, D., 2011. “Meth-
+ods of mathematical physics: a course of lectures”.
+Novosibirsk State University.
+[2] Kuznetsov, E., and Mikhailov, E., 2022. “Slip-
+ping flows and their breaking”. Annals of Physics,
+p. 169088.
+[3] Mor ́e, J. J., and Sorensen, D. C., 1982. Newton’s
+method. Tech. rep., Argonne National Lab., IL
+(USA).
+[4] Polyak, B. T., 2007. “Newton’s method and its use
+in optimization”. European Journal of Operational
+Research, 181(3), pp. 1086–1096.
+[5] DuChateau, P., and Zachmann, D. W., 2002. Ap-
+plied partial differential equations. Courier Corpo-
+ration.
+[6] CHU, C., 1978. Numerical methods in fluid dynam-
+ics, in “advances in applied mechanics”(cs. yih, ed.),
+vol. 18.
+[7] Zhang, P.-G., and Wang, J.-P., 2012. “A predictor–
+corrector compact finite difference scheme for burg-
+ers’ equation”. Applied Mathematics and Computa-
+tion, 219(3), pp. 892–898.
+[8] Butcher, J. C., 2016. Numerical methods for ordinary differential equations. John Wiley & Sons.
+[9] Press, W., Teukolsky, S., Vetterling, W., and Flan-
+nery, B., 2007. “Section 17.6. multistep, multi-
+value, and predictor-corrector methods”. Numerical
+Recipes: The Art of Scientific Computing.
+[10] Anderson, J. D., and Wendt, J., 1995. Computa-
+tional fluid dynamics, Vol. 206. Springer.
+[11] Hixon, R., and Hixon, R., 1997. “On increasing the
+accuracy of maccormack schemes for aeroacoustic
+applications”. In 3rd AIAA/CEAS Aeroacoustics
+Conference, p. 1586.
 
 
 
