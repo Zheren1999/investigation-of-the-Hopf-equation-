@@ -34,12 +34,12 @@ where ![image](https://user-images.githubusercontent.com/89813720/204060318-e7a3
 
 ![image](https://user-images.githubusercontent.com/89813720/204052798-350cf044-3da5-41ae-8572-f38c71ed99fd.png)
 
-This minimum corresponds to the point **x***  (the breaking point). From this, it is clear that the overturning occurs for the initial profiles with a negative derivative $u_x < 0$. For $t > t^* $, the equation $J = 0$ has two roots, respectively. The derivative goes to infinity at two points.  The area of ambiguity is between these points. From the mapping point of view, this means that the mapping $x = x(x_{0}, t)$ is single-valued — the equation $x = x(x_{0}, t)$ has only one (real) root $x_{0} = x_{0}(x, t)$ for all $x$. For $t > t^* $, the equation $x = x(x_{0} , t)$ has three roots $x_{0}$ for any $x$ from the ambiguity domain. A change in the number of roots of a mapping is called a bifurcation. In this case, one root converts to three roots at the bifurcation point **(x*, t*, u*)** . The bifurcation point is also called the cusp point.
+This minimum corresponds to the point **x***  (the breaking point). From this, it is clear that the overturning occurs for the initial profiles with a negative derivative $u_x < 0$. For $t > t^* $, the equation $J = 0$ has two roots, respectively. The derivative goes to infinity at two points.  The area of ambiguity is between these points. From the mapping point of view, this means that the mapping $x = x(x_{0}, t)$ is single-valued — the equation $x = x(x_{0}, t)$ has only one (real) root $x_{0} = x_{0}(x, t)$ for all $x$. For $t > t^* $, the equation $x = x(x_{0} , t)$ has three roots $x_{0}$ for any $x$ from the ambiguity domain. A change in the number of roots of a mapping is called a bifurcation. In this case, one root converts to three roots at the bifurcation point . The bifurcation point is also called the cusp point.
 In physics, overturning is the cause of the formation of shock waves. When approaching the overturning point, the equations of ideal hydrodynamics lose their applicability in real gas.
 
 **Model description**
 
-We study the Hopf equation with following limits: 0 < t < 1 , -5 < x < 10, and the initial condition:
+We study the Hopf equation with following limits: **0 < t < 1 , -5 < x < 10**, and the initial condition:
 
 ![image](https://user-images.githubusercontent.com/89813720/204052920-ce54fc1d-f950-45d6-ba28-a31f741cd5ef.png)
 
