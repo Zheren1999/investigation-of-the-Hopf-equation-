@@ -93,6 +93,69 @@ The algorithm for Newtons method can be described as follows:\\
 
 We utilize Lax - Friedrichs and MacCormack numerical schemes using Newton's method to determine the numerical solution.
 
+# Numerical schemes
+
+**Lax - Friedrichs**
+
+The Lax-Friedrichs scheme is defined in numerical analysis as a method for the numerical solution of hyperbolic partial differential equations based on the finite difference method \cite{duchateau2002applied}.
+
+**Extensions to Nonlinear Problems**
+
+The formula defines the hyperbolic system of one-dimensional conservation laws:
+
+![image](https://user-images.githubusercontent.com/89813720/204053476-93cb9ecb-275f-4d35-aed4-36bb4a25525b.png)
+
+A generalization of the Lax - Friedrichs scheme to nonlinear systems can be expressed in the following form:
+
+![image](https://user-images.githubusercontent.com/89813720/204053514-f6e824a1-949e-4e2a-8ad0-4cb1afd52e7a.png)
+
+Lax - Friedrichs numerical scheme can be used to construct higher-order schemes for solving systems of hyperbolic partial differential equations, in the same way that Euler's method is used to construct more accurate Runge-Kutta method for solving ordinary differential equations \cite{chu1978numerical}.
+
+This scheme can be written in a conservative form:
+
+![image](https://user-images.githubusercontent.com/89813720/204053570-5f17647d-254f-487a-a393-a024df710c0a.png)
+
+The Lax - Friedrichs scheme is explicit and has approximation error is $O(\Delta t, \Delta x)$. For this reason, it is not used as often in practice. This scheme is stable under the following condition:
+
+![image](https://user-images.githubusercontent.com/89813720/204053597-e6c3a65c-eae3-4b56-9e21-114a4784358b.png)
+
+**MacCormack scheme**
+
+**Difference schemes "predictor-corrector"**
+
+Predictor-corrector schemes are a family of methods related to
+algorithms designed to integrate ordinary
+differential equations\cite{zhang2012predictor, butcher2016numerical}. All such techniques involve two steps \cite{press2007section}:\\
+1. At the first step (predictor), some function is determined from
+values calculated in the previous step to get
+the approximated value of the desired function in the following
+point.\\
+2. At the second step (corrector), the received
+approximation using the predicted value
+function and another operator to interpolate the value
+desired position at the same point.
+
+The following steps can represented as the following expressions:
+
+![image](https://user-images.githubusercontent.com/89813720/204053889-3c63acff-eeef-4b3a-974a-01bda884fb6d.png)
+
+where, $u^{n+1/2}$ is the value obtained at the "predictor" step, and $u^{n+1}$ is the refined
+desired value.
+It can be seen that the first step is implemented using explicit methods, and
+the second step is based on the application of formulas of implicit methods. On the right side, instead of the unknown value $u^{n+1}$, the result is substituted predictions $u^{n+1/2}$.
+
+Methods using the predictor-corrector scheme:\\
+1. Milne method for ODE.\\
+2. Heun method (predictor - Euler's method, corrector - Trapezium method).
+\\
+3. Adams-Bashforth method for solutions
+non-rigid boundary value problems (the Adams-Bashforth-Moulton corrector is used).\\
+4. MacCormack method.\\
+
+
+
+
+
 
 
 
