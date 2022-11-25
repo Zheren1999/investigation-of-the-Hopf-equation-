@@ -233,7 +233,6 @@ The Fig. 3 shows the 3D numerical solution of Hopf equation using MacCormack sch
 
 **References**
 
-REFERENCES
 [1] Kuznetsov, E., and Shapiro, D., 2011. “Methods of mathematical physics: a course of lectures”. Novosibirsk State University.
 
 [2] Kuznetsov, E., and Mikhailov, E., 2022. “Slipping flows and their breaking”. Annals of Physics,p. 169088.
