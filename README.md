@@ -218,7 +218,18 @@ Later, to determine the corrector, the predicted value of the function we approx
 
 ![image](https://user-images.githubusercontent.com/89813720/204057781-1e8a2f1c-f42d-4c87-9f93-9070aa4a3cc1.png)
 
-The Fig.~\ref{Fig.3} shows the 3D numerical solution of Hopf equation using MacCormack scheme. In the same way as in the Lax - Friedrichs scheme, numerical solutions were constructed for different values of time $t$ (Fig.~\ref{Fig.4}) for MacCormack scheme. We use the number of time discretization points $N_{t} = 100$ and the spatial discretization, $N_{x} =1500 $, for both numerical schemes. Fig.~\ref{Fig.1} and Fig.~\ref{Fig.4} show that the analytical and numerical solutions coincide very well. However, the maximum discrepancy $r$ when using the MacCormack scheme is less than for the Lax - Friedrichs scheme (Fig.~\ref{Fig.5}). It can be explained by the fact that the MacCormack scheme has the second order of accuracy $O(\Delta t^2, \Delta x^2)$ in contrast to the Lax - Friedrichs scheme $O(\Delta t, \Delta x)$. Also, it can be seen that the maximum discrepancy $r$ is increasing with increasing time $t$. Up to the overturning time, $t^{*}$, the difference rises very slightly. After this time, the maximum value of discrepancy increases significantly. It is due to the overturning effect. The solution becomes ambiguous after reaching the overturning time $t^{*}$.
+The Fig. 3 shows the 3D numerical solution of Hopf equation using MacCormack scheme. In the same way as in the Lax - Friedrichs scheme, numerical solutions were constructed for different values of time $t$ (Fig. 4) for MacCormack scheme. We use the number of time discretization points $N_{t} = 100$ and the spatial discretization, $N_{x} =1500 $, for both numerical schemes. Fig. 1 and Fig. 4 show that the analytical and numerical solutions coincide very well. However, the maximum discrepancy $r$ when using the MacCormack scheme is less than for the Lax - Friedrichs scheme (Fig. 5). It can be explained by the fact that the MacCormack scheme has the second order of accuracy $O(\Delta t^2, \Delta x^2)$ in contrast to the Lax - Friedrichs scheme $O(\Delta t, \Delta x)$. Also, it can be seen that the maximum discrepancy $r$ is increasing with increasing time $t$. Up to the overturning time, $t^* $, the difference rises very slightly. After this time, the maximum value of discrepancy increases significantly. It is due to the overturning effect. The solution becomes ambiguous after reaching the overturning time $t^* $.
+
+![image](https://user-images.githubusercontent.com/89813720/204058820-b63c9c1c-9a38-4f8e-92e6-d6f41e8672c5.png)
+
+
+![image](https://user-images.githubusercontent.com/89813720/204058850-967f497e-0cc5-496e-bac6-5f3c27522568.png)
+
+![image](https://user-images.githubusercontent.com/89813720/204058862-3a2157f6-bfe8-4b09-874a-1c3381eb36be.png)
+
+
+![image](https://user-images.githubusercontent.com/89813720/204058836-1e0baf3f-ff29-4ad9-bc28-1ba3918bd748.png)
+
 
 **References**
 
