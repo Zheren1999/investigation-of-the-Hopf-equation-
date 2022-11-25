@@ -30,16 +30,16 @@ derivative $\frac{\partial{u}}{\partial{x}}$:
 
 ![image](https://user-images.githubusercontent.com/89813720/204052768-f8020b0b-a9f7-43c2-90d8-025b1260d2ee.png)
 
-where $ J = \frac{\partial{x}}{\partial{x_{0}}} = 1 + u'_{0}(x_{0})t $ is the Jacobian of $x = x_{0} + u_{0}(x_{0})t$. It can be seen from this expression that the derivative becomes infinite for the first time when the Jacobian, $J=0$ and corresponding $t^{*}$ can be expressed as the following formula:
+where ![image](https://user-images.githubusercontent.com/89813720/204060318-e7a374c7-e542-4d19-9234-2397b0e159e8.png)  is the Jacobian of $x = x_{0} + u_{0}(x_{0})t$. It can be seen from this expression that the derivative becomes infinite for the first time when the Jacobian, $J=0$ and corresponding time can be expressed as the following formula:
 
 ![image](https://user-images.githubusercontent.com/89813720/204052798-350cf044-3da5-41ae-8572-f38c71ed99fd.png)
 
-This minimum corresponds to the point $x^* $ (the breaking point). From this, it is clear that the overturning occurs for the initial profiles with a negative derivative $u_{x} < 0$. For $t > t^{*}$, the equation $J = 0$ has two roots, respectively. The derivative goes to infinity at two points.  The area of ambiguity is between these points. From the mapping point of view, this means that the mapping $x = x(x_{0}, t)$ is single-valued — the equation $x = x(x_{0}, t)$ has only one (real) root $x_{0} = x_{0}(x, t)$ for all $x$. For $t > t^{*}$, the equation $x = x(x_{0} , t)$ has three roots $x_{0}$ for any $x$ from the ambiguity domain. A change in the number of roots of a mapping is called a bifurcation. In this case, one root converts to three roots at the bifurcation point $ (x^{*}, t^{*}, u^{*}) $. The bifurcation point is also called the cusp point.
+This minimum corresponds to the point **x***  (the breaking point). From this, it is clear that the overturning occurs for the initial profiles with a negative derivative $u_x < 0$. For $t > t^* $, the equation $J = 0$ has two roots, respectively. The derivative goes to infinity at two points.  The area of ambiguity is between these points. From the mapping point of view, this means that the mapping $x = x(x_{0}, t)$ is single-valued — the equation $x = x(x_{0}, t)$ has only one (real) root $x_{0} = x_{0}(x, t)$ for all $x$. For $t > t^* $, the equation $x = x(x_{0} , t)$ has three roots $x_{0}$ for any $x$ from the ambiguity domain. A change in the number of roots of a mapping is called a bifurcation. In this case, one root converts to three roots at the bifurcation point **(x*, t*, u*)** . The bifurcation point is also called the cusp point.
 In physics, overturning is the cause of the formation of shock waves. When approaching the overturning point, the equations of ideal hydrodynamics lose their applicability in real gas.
 
 **Model description**
 
-We study the Hopf equation with following limits: $ 0<t<1 $ , $-5<x<10$, and the initial condition:
+We study the Hopf equation with following limits: 0 < t < 1 , -5 < x < 10, and the initial condition:
 
 ![image](https://user-images.githubusercontent.com/89813720/204052920-ce54fc1d-f950-45d6-ba28-a31f741cd5ef.png)
 
@@ -51,11 +51,11 @@ We use Newton's method for two different numerical schemes (Lax-Friedrichs and M
 
 # Newton's method
 
-Newton's method (Newton-Raphson method) is an iterative numerical method for finding the root of a given function \cite{more1982newton,polyak2007newton}. The search for a solution is carried out by constructing successive approximations based on simple iteration principles. 
+Newton's method (Newton-Raphson method) is an iterative numerical method for finding the root of a given function [3, 4]. The search for a solution is carried out by constructing successive approximations based on simple iteration principles. 
 
 **Description**
 
-To numerically solve the Eq.~(\ref{Eq.10}), by simple iteration it must be reduced to the equivalent expression Eq.~(\ref{Eq.11}).
+To numerically solve the Eq. 10, by simple iteration it must be reduced to the equivalent expression Eq. 11.
 
 ![image](https://user-images.githubusercontent.com/89813720/204053086-5e150b58-0ec6-44fb-802e-f1c64d63ecb8.png)
 
@@ -71,7 +71,7 @@ that implies:
 
 ![image](https://user-images.githubusercontent.com/89813720/204053150-99c09b3e-8c73-45ed-b7fd-ecf6a6a8554c.png)
 
-Assuming that the point of approximation is "close enough" to the root $\bar {y} $ and that the given function is continuous:
+Assuming that the point of approximation is "close enough" to the root $\bar {y}$ and that the given function is continuous:
 
 ![image](https://user-images.githubusercontent.com/89813720/204053163-f411a6ee-f41d-4817-bbcf-f41808ab1eee.png)
 
@@ -85,8 +85,10 @@ The function $\phi(y)$ is defined:
 
 **Algorithm**
 
-The algorithm for Newtons method can be described as follows:\\
-1. Set the initial approximation $y_0$\\
+The algorithm for Newtons method can be described as follows:
+
+1. Set the initial approximation $y_0$
+
 2. Until the stop condition is met, which can be taken as $|y_{n+1}-y_{n}|<\epsilon$, the error is within the required limits, calculate a new approximation:  
 
 ![image](https://user-images.githubusercontent.com/89813720/204053280-735545dd-ad8f-4b5d-8eec-d5aee182fe7f.png)
@@ -97,7 +99,7 @@ We utilize Lax - Friedrichs and MacCormack numerical schemes using Newton's meth
 
 **Lax - Friedrichs**
 
-The Lax-Friedrichs scheme is defined in numerical analysis as a method for the numerical solution of hyperbolic partial differential equations based on the finite difference method \cite{duchateau2002applied}.
+The Lax-Friedrichs scheme is defined in numerical analysis as a method for the numerical solution of hyperbolic partial differential equations based on the finite difference method [5].
 
 **Extensions to Nonlinear Problems**
 
@@ -109,7 +111,7 @@ A generalization of the Lax - Friedrichs scheme to nonlinear systems can be expr
 
 ![image](https://user-images.githubusercontent.com/89813720/204053514-f6e824a1-949e-4e2a-8ad0-4cb1afd52e7a.png)
 
-Lax - Friedrichs numerical scheme can be used to construct higher-order schemes for solving systems of hyperbolic partial differential equations, in the same way that Euler's method is used to construct more accurate Runge-Kutta method for solving ordinary differential equations \cite{chu1978numerical}.
+Lax - Friedrichs numerical scheme can be used to construct higher-order schemes for solving systems of hyperbolic partial differential equations, in the same way that Euler's method is used to construct more accurate Runge-Kutta method for solving ordinary differential equations [6].
 
 This scheme can be written in a conservative form:
 
@@ -125,15 +127,11 @@ The Lax - Friedrichs scheme is explicit and has approximation error is $O(\Delta
 
 Predictor-corrector schemes are a family of methods related to
 algorithms designed to integrate ordinary
-differential equations\cite{zhang2012predictor, butcher2016numerical}. All such techniques involve two steps \cite{press2007section}:\\
-1. At the first step (predictor), some function is determined from
-values calculated in the previous step to get
-the approximated value of the desired function in the following
-point.\\
-2. At the second step (corrector), the received
-approximation using the predicted value
-function and another operator to interpolate the value
-desired position at the same point.
+differential equations [7, 8]. All such techniques involve two steps [9]:
+
+1. At the first step (predictor), some function is determined from values calculated in the previous step to get the approximated value of the desired function in the following point.
+
+2. At the second step (corrector), the received approximation using the predicted value function and another operator to interpolate the value desired position at the same point.
 
 The following steps can represented as the following expressions:
 
@@ -144,18 +142,20 @@ desired value.
 It can be seen that the first step is implemented using explicit methods, and
 the second step is based on the application of formulas of implicit methods. On the right side, instead of the unknown value $u^{n+1}$, the result is substituted predictions $u^{n+1/2}$.
 
-Methods using the predictor-corrector scheme:\\
-1. Milne method for ODE.\\
+Methods using the predictor-corrector scheme:
+
+1. Milne method for ODE.
+
 2. Heun method (predictor - Euler's method, corrector - Trapezium method).
-\\
-3. Adams-Bashforth method for solutions
-non-rigid boundary value problems (the Adams-Bashforth-Moulton corrector is used).\\
-4. MacCormack method.\\
+
+3. Adams-Bashforth method for solutions non-rigid boundary value problems (the Adams-Bashforth-Moulton corrector is used).
+
+4. MacCormack method.
 
 **MacCormack method**
 
 The MacCormack method is a modified two-step scheme
-Lax - Wendroff, but it is much easier to use \cite{anderson1995computational}.
+Lax - Wendroff, but it is much easier to use [10].
 Consider the following first-order hyperbolic equation:
 
 ![image](https://user-images.githubusercontent.com/89813720/204057548-33203c5e-a58a-4a1d-bf28-fc5f44c8457e.png)
@@ -175,7 +175,7 @@ The scheme has the second order of accuracy with an approximation error $O(\Delt
 
 ![image](https://user-images.githubusercontent.com/89813720/204057636-827b83cd-3cc6-4c92-9f9f-9fbe1d9e03ae.png)
 
-The MacCormack scheme is often used due to a number of its advantages \cite{hixon1997increasing}. In particular, it operates only with quantities in the primary
+The MacCormack scheme is often used due to a number of its advantages [11]. In particular, it operates only with quantities in the primary
 grid nodes and can be easily generalized to multidimensional problems. Also, this is the schematic
 second-order accuracy.
 
@@ -187,12 +187,12 @@ We convert the Hopf equation into the divergent form:
 
 ![image](https://user-images.githubusercontent.com/89813720/204057695-7e82191a-ed76-4206-af51-8805c9ad850a.png)
 
-and using Eq.~(\ref{Eq.21}) we can get the Lax - Friedrichs numerical scheme: 
+and using Eq. 21 we can get the Lax - Friedrichs numerical scheme: 
 
 ![image](https://user-images.githubusercontent.com/89813720/204057717-9db76ec7-286c-4341-a502-674acb041432.png)
 
 where $dt$ and $dx$ are discretization steps in the time and space domain correspondingly. The upper index defines the time location, and the lower represents the spatial location of the function. 
-The scheme requires a boundary condition on the left side ($x = 0$). We use $u^{n}_{0}=0$ because of the exponential damping of the initial function.
+The scheme requires a boundary condition on the left side (x=0). We use $u^n_{0}=0$ because of the exponential damping of the initial function.
 
 We studied the solution of the Hopf equation for different values of time: $t = 0.5, 1, 1.649, 1.8$. 
 The Fig. 1 compares analytical and numerical solutions for a given time. In addition, the maximum discrepancy $r$ between the analytical and numerical solutions was calculated for the Lax - Friedrichs scheme. 
