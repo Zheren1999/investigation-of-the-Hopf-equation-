@@ -44,6 +44,9 @@ We study the Hopf equation with following limits: **0 < t < 1 , -5 < x < 10**, a
 ![image](https://user-images.githubusercontent.com/89813720/204052920-ce54fc1d-f950-45d6-ba28-a31f741cd5ef.png)
 
 Using the the analytical solution of this problem is represented by the following formula: 
+![image](https://user-images.githubusercontent.com/89813720/204065098-81b45982-d8e4-480b-98a8-d5f7459e2460.png)
+
+The overturning effect at which $u_{x}$ turns to infinity and the function ceases to be single-valued arises at the moment, $t^{*}=1.649$:
 
 ![image](https://user-images.githubusercontent.com/89813720/204052949-015447c8-610a-4a5b-a82d-b00ab0b285fe.png)
 
